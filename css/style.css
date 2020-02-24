@@ -53,7 +53,7 @@ a {
 
 .fuzz-config-text {
 	width: 100%;
-	height: calc(100% - 40px);
+	height: calc(100% - 50px);
     outline: none;
     border: none;
     resize: none;
@@ -77,9 +77,8 @@ a {
 .fuzz-config-button {
 	margin-right: 0;
 	margin-left: 10px;
-	height: 25px;
-	line-height: 23px;
-    width: 80px;
+	height: 30px;
+	width: 100px;
     border: 1px solid #999;
     background-color: #ccc;
     outline: none !important;    

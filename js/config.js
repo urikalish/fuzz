@@ -1,16 +1,17 @@
 export class Config {
-    constructor() {
+    constructor(goCallback) {
         this.LOCAL_STORAGE_CONFIG_KEY = 'fuzzConfig';
         this.defaultConfigObj = {
             version: '1.0'
-        };        
+        };
+        this.goCallback = goCallback;
     }
 
     init() {
         this.setDomElements();
         this.ensureLocalStorage();
         this.load();
-        this.onConfigChange();   
+        this.onConfigChange(); 
     }
 
     ensureLocalStorage() {
@@ -83,6 +84,6 @@ export class Config {
     }
     
     onClickGo() {
-        alert('GO');
+        this.goCallback();
     }
 }

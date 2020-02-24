@@ -1,4 +1,4 @@
-import { Config } from './config.js';
+import { Runner } from './runner.js';
 
-let config = new Config();
-config.init();
+const runner = new Runner();
+runner.init();
