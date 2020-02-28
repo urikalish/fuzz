@@ -1,10 +1,59 @@
-export class Config {
-    constructor(goCallback) {
+export class ConfigHelper {
+    constructor() {
         this.LOCAL_STORAGE_CONFIG_KEY = 'fuzzConfig';
         this.defaultConfigObj = {
-            version: '1.0'
+            version: '1.0',
+            timeout: 100,
+            tests: [
+                {
+                    name: "Test 1",
+                    states: [
+                        {
+                            points: [
+                                '11111',
+                                '10101',
+                                '11111',
+                                '10101',
+                                '11111'
+                            ]
+                        },
+                        {
+                            points: [
+                                '00000',
+                                '01010',
+                                '00000',
+                                '01010',
+                                '00000'
+                            ]
+                        }
+                    ]
+                },
+                {
+                    name: "Test 2",
+                    states: [
+                        {
+                            points: [
+                                '11111',
+                                '10101',
+                                '11111',
+                                '10101',
+                                '11111'
+                            ]
+                        },
+                        {
+                            angle: 5,
+                            points: [
+                                '00000',
+                                '01010',
+                                '00000',
+                                '01010',
+                                '00000'
+                            ]
+                        }
+                    ]
+                }
+            ]
         };
-        this.goCallback = goCallback;
     }
 
     init() {
@@ -24,11 +73,9 @@ export class Config {
         this.configTextarea = document.getElementById('fuzz-config-text');
         this.defaultsButton = document.getElementById('fuzz-config-button-defaults');
         this.saveButton = document.getElementById('fuzz-config-button-save');
-        this.goButton = document.getElementById('fuzz-config-button-go');
         this.configTextarea.addEventListener('keyup', this.onConfigChange.bind(this));        
         this.defaultsButton.addEventListener('click', this.onClickDefaults.bind(this));
         this.saveButton.addEventListener('click', this.onClickSave.bind(this));
-        this.goButton.addEventListener('click', this.onClickGo.bind(this));
     }
 
     load() {
@@ -82,8 +129,9 @@ export class Config {
         this.save(this.configTextarea.value);
         this.load();
     }
-    
-    onClickGo() {
-        this.goCallback();
+
+    get config() {
+        return JSON.parse(this.configTextarea.value.trim());
     }
+    
 }

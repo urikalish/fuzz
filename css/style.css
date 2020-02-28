@@ -40,7 +40,7 @@ a {
 /*--------------------------------------------------------------------------------*/
 
 .fuzz-aside {
-    flex: 0 0 600px;
+    flex: 0 0 500px;
     margin: 0;
     height: 100%;
     background-color: #222;
@@ -60,8 +60,9 @@ a {
     overflow-y: auto;    
     background-color: #333;
     color: #fff;
-    font-size: 22px;
-    line-height: 24px;
+    font-family: monospace;
+    font-size: 16px;
+    line-height: 16px;
     padding: 10px;
 }
 .fuzz-config-text--error {
@@ -93,16 +94,29 @@ a {
 /*--------------------------------------------------------------------------------*/
 
 .fuzz-main {
-    flex: 1 1 auto;
-    margin: 0;
-    background-color: #000;    
-    padding: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: calc(100% - 500px);
+    height: 100%;
+    overflow: auto; 
+    background-color: #000;      
+}
+
+.fuzz-test-panel {
+    position: relative;
+    margin: 40px;
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    color: #999;
+    background: #000;    
 }
 
 canvas {
     display: inline-block;
     border: 1px solid #666;
-    background-color: #000;
 }
 
 /*--------------------------------------------------------------------------------*/
