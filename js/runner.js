@@ -7,9 +7,9 @@ export class Runner {
 
     init() {
         this.configHelper.init();
-        this.goButton = document.getElementById('fuzz-config-button-go');
+        this.goButton = document.getElementById('fuzz-action-button-go');
         this.goButton.addEventListener('click', this.onGo.bind(this));
-        this.stopButton = document.getElementById('fuzz-config-button-stop');
+        this.stopButton = document.getElementById('fuzz-action-button-stop');
         this.stopButton.addEventListener('click', this.onStop.bind(this));
     }
     
@@ -35,15 +35,15 @@ export class Runner {
     }
 
     buildUI() {
-        const mainElm = document.getElementById('fuzz-main');
-        mainElm.innerHTML = '';
+        const testsElm = document.getElementById('fuzz-tests');
+        testsElm.innerHTML = '';
         this.cnv = [];
         this.ctx = [];
         this.config.tests.forEach((t, i) => {
             const panelElm = document.createElement('div');
             panelElm.classList.add('fuzz-test-panel');
             panelElm.innerText = t.name;
-            mainElm.appendChild(panelElm);
+            testsElm.appendChild(panelElm);
             
             const canvasElm = document.createElement('canvas');
             canvasElm.setAttribute('id', `fuzz-test-canvas-${i}`);
@@ -74,7 +74,11 @@ export class Runner {
         });
         this.count = (this.count+1) % 1000;
         if (!this.shouldStop && ((new Date()).getTime() - this.startTime) / 1000 <= this.config.durationSec) {
-            setTimeout(this.step.bind(this), this.config.timeoutMs);
+            if (this.config.timeoutMs >= 0) {
+                setTimeout(this.step.bind(this), this.config.timeoutMs);
+            } else {
+                window.requestAnimationFrame(this.step.bind(this));
+            }
         } else {
             this.stop();
         }     

@@ -7,9 +7,10 @@ export class ConfigHelper {
             durationSec: 10,
             tests: [
                 {
-                    name: "Test 1",
+                    name: "Blink",
                     states: [
                         {
+                            angle: 0,
                             points: [
                                 '11111',
                                 '10101',
@@ -19,6 +20,7 @@ export class ConfigHelper {
                             ]
                         },
                         {
+                            angle: 0,
                             points: [
                                 '00000',
                                 '01010',
@@ -30,9 +32,10 @@ export class ConfigHelper {
                     ]
                 },
                 {
-                    name: "Test 2",
+                    name: "Rotate",
                     states: [
                         {
+                            angle: 10,
                             points: [
                                 '11111',
                                 '10101',
@@ -42,13 +45,13 @@ export class ConfigHelper {
                             ]
                         },
                         {
-                            angle: 5,
+                            angle: -10,
                             points: [
-                                '00000',
-                                '01010',
-                                '00000',
-                                '01010',
-                                '00000'
+                                '11111',
+                                '10101',
+                                '11111',
+                                '10101',
+                                '11111'
                             ]
                         }
                     ]

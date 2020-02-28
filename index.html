@@ -15,14 +15,17 @@
         <div class="fuzz-config">
             <textarea id="fuzz-config-text" class="fuzz-config-text"></textarea>
             <div class="fuzz-config-buttons">
-                <button id="fuzz-config-button-defaults" class="fuzz-config-button fuzz-config-button-defaults">Defaults</button>
-                <button id="fuzz-config-button-save" class="fuzz-config-button fuzz-config-button-save" disabled="disabled">Save</button>
-                <button id="fuzz-config-button-go" class="fuzz-config-button fuzz-config-button-go">GO</button>
-                <button id="fuzz-config-button-stop" class="fuzz-config-button fuzz-config-button-stop" disabled="disabled">Stop</button>
+                <button id="fuzz-config-button-defaults" class="fuzz-button fuzz-config-button-defaults">Defaults</button>
+                <button id="fuzz-config-button-save" class="fuzz-button fuzz-config-button-save" disabled="disabled">Save</button>
             </div>
         </div>
     </div>
     <div id="fuzz-main" class="fuzz-main">
+        <div id="fuzz-actions" class="fuzz-actions">
+            <button id="fuzz-action-button-go" class="fuzz-button fuzz-action-button-go">GO</button>
+            <button id="fuzz-action-button-stop" class="fuzz-button fuzz-action-button-stop" disabled="disabled">Stop</button>
+        </div>
+        <div id="fuzz-tests" class="fuzz-tests"></div>
     </div>
     <script type="module" src="./js/index.js"></script>
 </body>
