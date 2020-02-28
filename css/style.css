@@ -57,16 +57,17 @@ a {
     outline: none;
     border: none;
     resize: none;
-    overflow-y: auto;    
-    background-color: #333;
-    color: #fff;
-    font-family: monospace;
-    font-size: 16px;
-    line-height: 16px;
+    overflow-y: auto; 
+    border: 1px solid #333;   
+    background-color: #000;
+    color: #9fc;
+    font-size: 20px;
+    line-height: 20px;
     padding: 10px;
+    transition: 0.5s ease all;
 }
 .fuzz-config-text--error {
-	background-color: #600;
+    color: #f33;
 }
 
 .fuzz-config-buttons {
@@ -106,17 +107,18 @@ a {
 
 .fuzz-test-panel {
     position: relative;
-    margin: 40px;
+    margin: 20px;
     width: 100px;
     height: 100px;
-    padding: 10px;
-    color: #999;
+    border: 1px solid #333;
     background: #000;    
+    color: #666;       
 }
 
-canvas {
-    display: inline-block;
-    border: 1px solid #666;
+.fuzz-test-canvas {
+    position: absolute;
+    left: 45px;
+    top: 45px;    
 }
 
 /*--------------------------------------------------------------------------------*/

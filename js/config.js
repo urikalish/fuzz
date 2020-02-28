@@ -3,7 +3,8 @@ export class ConfigHelper {
         this.LOCAL_STORAGE_CONFIG_KEY = 'fuzzConfig';
         this.defaultConfigObj = {
             version: '1.0',
-            timeout: 100,
+            timeoutMs: 100,
+            durationSec: 10,
             tests: [
                 {
                     name: "Test 1",
