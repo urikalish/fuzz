@@ -10,6 +10,8 @@ export class ConfigHelper {
                     name: "Blink",
                     states: [
                         {
+                            transX: 0,
+                            transY: 0,
                             angle: 0,
                             points: [
                                 '11111',
@@ -20,6 +22,8 @@ export class ConfigHelper {
                             ]
                         },
                         {
+                            transX: 0,
+                            transY: 0,
                             angle: 0,
                             points: [
                                 '00000',
@@ -35,6 +39,8 @@ export class ConfigHelper {
                     name: "Rotate",
                     states: [
                         {
+                            transX: 0,
+                            transY: 0,
                             angle: 10,
                             points: [
                                 '11111',
@@ -45,6 +51,9 @@ export class ConfigHelper {
                             ]
                         },
                         {
+                            transX: 0,
+                            transY: 0,
+                            angle: 10,
                             angle: -10,
                             points: [
                                 '11111',

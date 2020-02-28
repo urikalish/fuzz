@@ -63,14 +63,10 @@ export class Runner {
             state.points.forEach((row, r) => {
                 for(let c = 0; c < row.length; c++) {
                     ctx.fillStyle = row[c] === '1' ? '#fff' : '#000';
-                    ctx.fillRect(c, r, 1, 1);
+                    ctx.fillRect(c + (state.transX || 0), r + (state.transY || 0), 1, 1);
                 }
             });
-            if (state.angle) {
-                this.cnv[i].style['transform'] =`rotateZ(${state.angle}deg)`;
-            } else {
-                this.cnv[i].style['transform'] = 'rotateZ(0deg)';
-            }
+            this.cnv[i].style['transform'] =`rotateZ(${state.angle || 0}deg)`
         });
         this.count = (this.count+1) % 1000;
         if (!this.shouldStop && ((new Date()).getTime() - this.startTime) / 1000 <= this.config.durationSec) {
