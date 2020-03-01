@@ -72,8 +72,8 @@ export class Runner {
             this.cnv[i].style['top'] = `${this.TRANS_BASE_Y + state.transY || 0}px`;
             this.cnv[i].style['transform'] =`rotateZ(${state.angle || 0}deg)`
         });
-        this.count = (this.count+1) % 1000;
-        if (!this.shouldStop && ((new Date()).getTime() - this.startTime) / 1000 <= this.config.durationSec) {
+        this.count = (this.count+1) % 1000000;
+        if (!this.shouldStop /*&& ((new Date()).getTime() - this.startTime) / 1000 <= this.config.durationSec*/) {
             if (this.config.timeoutMs >= 0) {
                 setTimeout(this.step.bind(this), this.config.timeoutMs);
             } else {
