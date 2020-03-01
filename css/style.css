@@ -108,7 +108,6 @@ a {
     align-items: flex-start;
     flex-wrap: wrap;
     width: 100%;
-    height: calc(100% - 70px);
     overflow: auto; 
 }
 
