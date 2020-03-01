@@ -124,8 +124,7 @@ a {
 
 .fuzz-test-canvas {
     position: absolute;
-    left: 45px;
-    top: 55px;    
+    transform-origin: center;
 }
 
 /*--------------------------------------------------------------------------------*/

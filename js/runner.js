@@ -11,6 +11,8 @@ export class Runner {
         this.goButton.addEventListener('click', this.onGo.bind(this));
         this.stopButton = document.getElementById('fuzz-action-button-stop');
         this.stopButton.addEventListener('click', this.onStop.bind(this));
+        this.TRANS_BASE_X = 45;
+        this.TRANS_BASE_Y = 55; 
     }
     
     onGo() {
@@ -47,8 +49,8 @@ export class Runner {
             
             const canvasElm = document.createElement('canvas');
             canvasElm.setAttribute('id', `fuzz-test-canvas-${i}`);
-            canvasElm.setAttribute('width', '10px');
-            canvasElm.setAttribute('height', '10px');
+            canvasElm.setAttribute('width', `${t.states[0].points[0].length}px`);
+            canvasElm.setAttribute('height', `${t.states[0].points.length}px`);
             canvasElm.classList.add('fuzz-test-canvas');
             panelElm.appendChild(canvasElm);
             this.cnv.push(canvasElm);
@@ -63,9 +65,11 @@ export class Runner {
             state.points.forEach((row, r) => {
                 for(let c = 0; c < row.length; c++) {
                     ctx.fillStyle = row[c] === '1' ? '#fff' : '#000';
-                    ctx.fillRect(c + (state.transX || 0), r + (state.transY || 0), 1, 1);
+                    ctx.fillRect(c, r, 1, 1);
                 }
             });
+            this.cnv[i].style['left'] = `${this.TRANS_BASE_X + state.transX || 0}px`;
+            this.cnv[i].style['top'] = `${this.TRANS_BASE_Y + state.transY || 0}px`;
             this.cnv[i].style['transform'] =`rotateZ(${state.angle || 0}deg)`
         });
         this.count = (this.count+1) % 1000;

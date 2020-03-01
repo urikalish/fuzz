@@ -41,7 +41,7 @@ export class ConfigHelper {
                         {
                             transX: 0,
                             transY: 0,
-                            angle: 10,
+                            angle: -10,
                             points: [
                                 '11111',
                                 '10101',
@@ -54,7 +54,6 @@ export class ConfigHelper {
                             transX: 0,
                             transY: 0,
                             angle: 10,
-                            angle: -10,
                             points: [
                                 '11111',
                                 '10101',
