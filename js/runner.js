@@ -1,4 +1,4 @@
-import { ConfigHelper } from './config.js';
+import { ConfigHelper } from './config-helper.js';
 
 export class Runner {
     constructor() {
