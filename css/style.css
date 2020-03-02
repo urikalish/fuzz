@@ -117,9 +117,18 @@ a {
     margin: 20px;
     width: 100px;
     height: 100px;
-    padding: 10px;
-    color: #9fc;
     border: 1px solid #222;       
+}
+
+.fuzz-test-name {
+    position: absolute;
+    left: 0;
+    top: -20px;
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;    
+    color: #999;
 }
 
 .fuzz-test-canvas {
