@@ -8,9 +8,13 @@ export class Runner {
     init() {
         this.configHelper.init();
         this.goButton = document.getElementById('fuzz-action-button-go');
-        this.goButton.addEventListener('click', this.onGo.bind(this));
+        this.goButton.addEventListener('click', () => {
+            this.onGo();
+        });
         this.stopButton = document.getElementById('fuzz-action-button-stop');
-        this.stopButton.addEventListener('click', this.onStop.bind(this));
+        this.stopButton.addEventListener('click', () => {
+            this.onStop();
+        });
         this.TRANS_BASE_X = 45;
         this.TRANS_BASE_Y = 40; 
     }
